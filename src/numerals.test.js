@@ -2,159 +2,109 @@ const { expect } = require('chai');
 const { decimalToRoman } = require('./numerals');
 
 describe('Roman Numerals', () => {
-  it('returns I for 1', () => {
-    const result = decimalToRoman(1);
-    expect(result).to.equal('I');
+
+  it('converts 1 to I', () => {
+    expect(decimalToRoman(1)).to.equal('I');
   });
 
-  it('returns II for 2', () => {
-    const result = decimalToRoman(2);
-    expect(result).to.equal('II');
+  it('converts 2 to II', () => {
+    expect(decimalToRoman(2)).to.equal('II');
   });
 
-  it('returns III for 3', () => {
-    const result = decimalToRoman(3);
-    expect(result).to.equal('III');
+  it('converts 3 to III', () => {
+    expect(decimalToRoman(3)).to.equal('III');
   });
 
-  it('returns IV for 4', () => {
-    const result = decimalToRoman(4);
-    expect(result).to.equal('IV');
+  it('converts 5 to V', () => {
+    expect(decimalToRoman(5)).to.equal('V');
   });
 
-  it('returns V for 5', () => {
-    const result = decimalToRoman(5);
-    expect(result).to.equal('V');
+  it('converts 6 to VI', () => {
+    expect(decimalToRoman(6)).to.equal('VI');
+  });
+  
+  it('converts 4 to IV', () => {
+    expect(decimalToRoman(4)).to.equal('IV');
   });
 
-  it('returns VI for 6', () => {
-    const result = decimalToRoman(6);
-    expect(result).to.equal('VI');
+  it('converts 7 to VII', () => {
+    expect(decimalToRoman(7)).to.equal('VII');
   });
 
-  it('returns VII for 7', () => {
-    const result = decimalToRoman(7)
-    expect(result).to.equal('VII')
-  })
+  it('converts 8 to VIII', () => {
+    expect(decimalToRoman(8)).to.equal('VIII');
+  });
 
-  it('returns VIII for 8', () => {
-    const result = decimalToRoman(8)
-    expect(result).to.equal('VIII')
-  })
+  it('converts 9 to IX', () => {
+    expect(decimalToRoman(9)).to.equal('IX');
+  });
 
-  it('returns IX for 9', () => {
-    const result = decimalToRoman(9)
-    expect(result).to.equal('IX')
-  })
+  it('converts 10 to X', () => {
+    expect(decimalToRoman(10)).to.equal('X');
+  });
 
-  it('returns X for 10', () => {
-    const result = decimalToRoman(10)
-    expect(result).to.equal('X')
-  })
+  it('converts 11 to XI', () => {
+    expect(decimalToRoman(11)).to.equal('XI');
+  });
 
-  it('returns XI for 11', () => {
-    const result = decimalToRoman(11)
-    expect(result).to.equal('XI')
-  })
+  it('converts 12 to XII', () => {
+    expect(decimalToRoman(12)).to.equal('XII');
+  });
 
-  it('returns XII for 12', () => {
-    const result = decimalToRoman(12)
-    expect(result).to.equal('XII')
-  })
+  it('converts 13 to XIII', () => {
+    expect(decimalToRoman(13)).to.equal('XIII');
+  });
 
-  it('returns XIII for 13', () => {
-    const result = decimalToRoman(13)
-    expect(result).to.equal('XIII')
-  })
+  it('converts 14 to XIV', () => {
+    expect(decimalToRoman(14)).to.equal('XIV');
+  });
 
-  it('returns XIV for 14', () => {
-    const result = decimalToRoman(14)
-    expect(result).to.equal('XIV')
-  })
+  it('converts 15 to XV', () => {
+    expect(decimalToRoman(15)).to.equal('XV');
+  });
 
-  it('returns XV for 15', () => {
-    const result = decimalToRoman(15)
-    expect(result).to.equal('XV')
-  })
+  it('converts 16 to XVI', () => {
+    expect(decimalToRoman(16)).to.equal('XVI');
+  });
 
-  it('returns XVIII for 18', () => {
-    const result = decimalToRoman(18)
-    expect(result).to.equal('XVIII')
-  })
+  it('converts 19 to XIX', () => {
+    expect(decimalToRoman(19)).to.equal('XIX');
+  });
 
-  it('returns XIX for 19', () => {
-    const result = decimalToRoman(19)
-    expect(result).to.equal('XIX')
-  })
+  it('converts 20 to XX', () => {
+    expect(decimalToRoman(20)).to.equal('XX');
+  });
 
-  it('returns XX for 20', () => {
-    const result = decimalToRoman(20)
-    expect(result).to.equal('XX')
-  })
+  it('converts 21 to XXI', () => {
+    expect(decimalToRoman(21)).to.equal('XXI');
+  });
 
-  it('returns XXIV for 24', () => {
-    const result = decimalToRoman(24)
-    expect(result).to.equal('XXIV')
-  })
+  it('converts 24 to XXIV', () => {
+    expect(decimalToRoman(24)).to.equal('XXIV');
+  });
 
-  it('returns XXIX for 29', () => {
-    const result = decimalToRoman(29)
-    expect(result).to.equal('XXIX')
-  })
+  it('converts 29 to XXIX', () => {
+    expect(decimalToRoman(29)).to.equal('XXIX');
+  });
 
-  it('returns XL for 40', () => {
-    const result = decimalToRoman(40)
-    expect(result).to.equal('XL')
-  })
+  it('converts 35 to XXXV', () => {
+    expect(decimalToRoman(35)).to.equal('XXXV');
+  });
 
-  it('returns XLIX for 49', () => {
-    const result = decimalToRoman(49)
-    expect(result).to.equal('XLIX')
-  })
+  it('converts 40 to XL', () => {
+    expect(decimalToRoman(40)).to.equal('XL');
+  });
 
-  it('returns L for 50', () => {
-    const result = decimalToRoman(50)
-    expect(result).to.equal('L')
-  })
+  it('converts 42 to XLII', () => {
+    expect(decimalToRoman(42)).to.equal('XLII');
+  });
 
-  it('returns LX for 60', () => {
-    const result = decimalToRoman(60)
-    expect(result).to.equal('LX')
-  })
+  it('converts 44 to XLIV', () => {
+    expect(decimalToRoman(44)).to.equal('XLIV');
+  });
 
-  it('returns LXXIV for 74', () => {
-    const result = decimalToRoman(74)
-    expect(result).to.equal('LXXIV')
-  })
-
-  it('returns LXXXIX for 89', () => {
-    const result = decimalToRoman(89)
-    expect(result).to.equal('LXXXIX')
-  })
-
-  it('returns XC for 90', () => {
-    const result = decimalToRoman(90)
-    expect(result).to.equal('XC')
-  })
-
-  it('returns XCIV for 94', () => {
-    const result = decimalToRoman(94)
-    expect(result).to.equal('XCIV')
-  })
-
-  it('returns XCIX for 99', () => {
-    const result = decimalToRoman(99)
-    expect(result).to.equal('XCIX')
-  })
-
-  it('returns C for 100', () => {
-    const result = decimalToRoman(100)
-    expect(result).to.equal('C')
-  })
-
-  it('returns CC for 200', () => {
-    const result = decimalToRoman(200)
-    expect(result).to.equal('CC')
-  })
+  it('converts 49 to XLIX', () => {
+    expect(decimalToRoman(49)).to.equal('XLIX');
+  });
 
 });

@@ -1,36 +1,33 @@
 
-const valueMap = [
-  { decimal: 100, symbol: 'C' },
-  { decimal: 50, symbol: 'L' },
-  { decimal: 10, symbol: 'X' },
-  { decimal: 5, symbol: 'V' },
-];
-
-const prefixMap = [
-  { decimal: 10, symbol: 'X' },
-  { decimal: 1, symbol: 'I' },
+const symbols = [
+  { decimal: 1, roman: 'I', maxRepeats: 3, prefixes: [] },
+  { decimal: 5, roman: 'V', maxRepeats: 1, prefixes: [ { decimal: 1, roman: 'I' } ] },
+  { decimal: 10, roman: 'X', maxRepeats: 3, prefixes: [ { decimal: 1, roman: 'I' } ] },
+  { decimal: 50, roman: 'L', maxRepeats: 1, prefixes: [ { decimal: 10, roman: 'X' } ] },
 ]
 
 function decimalToRoman(decimal) {
-  var value = decimal;
   var result = '';
-  valueMap.forEach(element => {
-    while (value >= element.decimal) {
+  var value = decimal;
+  symbols.forEach((element, index) => {
+    var valueToCompare = index < symbols.length - 1
+      ? value % symbols[index+1].decimal
+      : value;
+    var toPrepend = '';
+    while (valueToCompare >= element.decimal && valueToCompare <= element.decimal * element.maxRepeats) {
+      toPrepend += element.roman;
       value -= element.decimal;
-      result += element.symbol;
+      valueToCompare -= element.decimal;
     }
-    prefixMap.forEach(prefix => {
-      if (prefix.decimal < element.decimal &&
-        value >= element.decimal - prefix.decimal) {
+    element.prefixes.forEach(prefix => {
+      if (valueToCompare > 0 && valueToCompare == element.decimal - prefix.decimal) {
+        toPrepend += prefix.roman + element.roman;
         value -= element.decimal - prefix.decimal;
-        result += prefix.symbol + element.symbol;
-      }
+        valueToCompare -= element.decimal - prefix.decimal;
+      }  
     });
+    result = toPrepend + result;
   });
-  while (value >= 1) {
-    value--;
-    result += 'I';
-  }
   return result;
 }
 
